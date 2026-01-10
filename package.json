@@ -1,0 +1,19 @@
+{
+  "name": "pw-bdd-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bddgen": "npx bddgen",
+    "test": "npx playwright test --headed --reporter=html,list"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.5.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "playwright-bdd": "^8.4.2"
+  }
+}
