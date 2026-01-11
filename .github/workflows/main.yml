@@ -32,6 +32,8 @@ jobs:
       run: npm i multiple-cucumber-html-reporter -D
     - name: Install winston
       run: npm i winston
+    - name: Remove .features-gen folder
+      run: rm -rf .features-gen
     - name: Generate test files from feature files
       run: npm run bddgen
     - name: Run Playwright tests

@@ -13,10 +13,17 @@ When('I enter username as {string} and password {string} fields', async ({ page 
     await page.waitForTimeout(2000);
 });
 
-Then('I click on the {string} button', async ({ page }, arg) => {
+Then('I click on the {string} button', async ({ page }) => {
     await page.locator(`button#loginBtn`).click();
 });
 
 Then('I should see the {string} title', async ({ page }, pageTitle) => {
     await expect(page).toHaveTitle(pageTitle);
+});
+Then('Click on {string} button', async ({ page }, name) => {
+    await page.locator("div.card-tools a[href='" + name + "']").click();
+});
+Then('Click on  Check Me Check Box', async ({ page }) => {
+    await page.locator("input#myCheckbox").check();
+    expect(await page.locator("input#myCheckbox").isChecked()).toBeTruthy();
 });
