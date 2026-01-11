@@ -30,10 +30,12 @@ jobs:
       run: npm install dotenv
     - name: Install Cucumber Report
       run: npm i multiple-cucumber-html-reporter -D
-    - name: Insta;; winston
+    - name: Install winston
       run: npm i winston
+    - name: Generate test files from feature files
+      run: npm run bddgen
     - name: Run Playwright tests
-      run: npx run test
+      run: npm run test
     - uses: actions/upload-artifact@v4
       if: always()
       with:
